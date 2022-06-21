@@ -11,7 +11,6 @@ with open("./decompiler/config/all-types.gc") as f:
       flag_assert = line.split("#x")[1].strip()
       heap_base_amount = flag_assert[len(flag_assert)-7:len(flag_assert)-4]
       if len(flag_assert) > 1 and heap_base_amount != "000":
-        # First let's check to see if the heap-base already exists around this line
         found_heapbase = False
         for i in range(line_num - 4, line_num + 3):
           temp_line = lines[i]
